@@ -1,5 +1,5 @@
 appId: 'Azur-RP-Launcher'
-productName: 'Azur RP Launcher'
+productName: 'AzurRP Launcher'
 artifactName: 'Azur-RP-Launcher-setup-${os}-${arch}.${ext}'
 
 copyright: 'Copyright © 2025 AzurRP'
