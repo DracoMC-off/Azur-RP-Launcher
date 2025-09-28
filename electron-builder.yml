@@ -1,4 +1,4 @@
-appId: 'Azur-RP-Launcher'
+appId: 'AzurRP-Launcher'
 productName: 'AzurRP Launcher'
 artifactName: 'Azur-RP-Launcher-setup-${os}-${arch}.${ext}'
 
