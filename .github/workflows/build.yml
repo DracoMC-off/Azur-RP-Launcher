@@ -1,0 +1,86 @@
+name: Build & Release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install Dependencies
+        run: npm ci
+        shell: bash
+
+      - name: Build Launcher
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run dist
+        shell: bash
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: launcher-${{ matrix.os }}
+          path: dist/**
+
+  release:
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Get version from package.json
+        id: package-version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.package-version.outputs.version }}
+          release_name: "Release v${{ steps.package-version.outputs.version }}"
+          draft: false
+          prerelease: false
+          files: |
+            dist/**/Azur-RP-Launcher-setup-win-x64.exe
+            dist/**/Azur-RP-Launcher-setup-linux-x86_64.AppImage
+            dist/**/Azur-RP-Launcher-setup-mac-x64.dmg
+            dist/**/*.blockmap
+            dist/**/latest-linux.yml
+            dist/**/latest-mac.yml
+            dist/**/latest.yml
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

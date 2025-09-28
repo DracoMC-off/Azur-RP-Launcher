@@ -1,0 +1,51 @@
+appId: 'Azur-RP-Launcher'
+productName: 'AzurRP Launcher'
+artifactName: 'Azur-RP-Launcher-setup-${os}-${arch}.${ext}'
+
+copyright: 'Copyright © 2025 AzurRP'
+
+asar: true
+compression: 'maximum'
+
+files:
+  - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.nvmrc,.eslintrc.json}'
+
+extraResources:
+  - 'libraries'
+
+# Windows Configuration
+win: 
+  target: 
+    - target: 'nsis'
+      arch: 'x64'
+
+# Windows Installer Configuration
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+
+# macOS Configuration
+mac:
+  target:
+    - target: 'dmg'
+      arch:
+        - 'x64'
+        - 'arm64'
+  artifactName: 'Azur-RP-Launcher-setup-${os}-${arch}.${ext}'
+  category: 'public.app-category.games'
+
+# Linux Configuration
+linux: 
+  target: 'AppImage'
+  maintainer: 'AzurRP'
+  vendor: 'AzurRP'
+  synopsis: 'Modded Minecraft Launcher'
+  description: 'Custom launcher which allows users to join the AzurRP server'
+  category: 'Game'
+
+
+directories:
+  buildResources: 'build'
+  output: 'dist'
