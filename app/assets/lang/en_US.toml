@@ -131,8 +131,8 @@ continueButton = "CONTINUE"
 
 
 [js.discord]
-waiting = "Waiting for Client.."
-state = "Server: {shortId}"
+waiting = "En attente d'un client..."
+state = "Serveur: {shortId}"
 
 [js.index]
 microsoftLoginTitle = "Microsoft Login"
@@ -211,9 +211,9 @@ checkConsoleForDetails = "Please check the console (CTRL + Shift + i) for more d
 checking = "Checking for News"
 
 [js.landing.discord]
-loading = "Loading game.."
-joining = "Sailing to Westeros!"
-joined = "Exploring the Realm!"
+loading = "Chargement du jeux..."
+joining = "Entrain de rejoindre AzurRP!"
+joined = "Explore la ville!"
 
 [js.overlay]
 dismiss = "Dismiss"

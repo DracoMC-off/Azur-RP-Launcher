@@ -41,8 +41,8 @@ linux:
   target: 'AppImage'
   maintainer: 'AzurRP'
   vendor: 'AzurRP'
-  synopsis: 'Modded Minecraft Launcher'
-  description: 'Custom launcher which allows users to join the AzurRP server'
+  synopsis: 'Lanceur Minecraft modifié pour le serveur AzurRP'
+  description: 'Lanceur personnalisé qui permet aux utilisateurs de rejoindre le serveur AzurRP'
   category: 'Game'
 
 
