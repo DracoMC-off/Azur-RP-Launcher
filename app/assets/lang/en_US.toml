@@ -166,9 +166,9 @@ noSelection = "No Server Selected"
 loading = "Loading.."
 
 [js.landing.serverStatus]
-server = "SERVER"
-offline = "OFFLINE"
-players = "PLAYERS"
+server = "SERVEUR"
+offline = "HORS LIGNE"
+players = "JOUEURS"
 
 [js.landing.systemScan]
 checking = "Checking system info.."
@@ -257,7 +257,7 @@ failedToggleTitle = "Failed to Toggle<br>One or More Drop-in Mods"
 okButton = "Okay"
 
 [js.settings.serverListing]
-mainServer = "Main Server"
+mainServer = "Serveur principal"
 
 [js.settings.java]
 selectedJava = "Selected: Java {version} ({vendor})"

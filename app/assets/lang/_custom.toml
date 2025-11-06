@@ -8,7 +8,7 @@ mediaGitHubURL = "#"
 mediaXURL = "#"
 mediaInstagramURL = "#"
 mediaYouTubeURL = "#"
-mediaDiscordURL = "https://discord.gg/EpGbx6yja4"
+mediaDiscordURL = "https://azur-rp.eu/link/discord"
 
 [ejs.settings]
 sourceGithubLink = "#"
@@ -17,4 +17,4 @@ supportLink = "#"
 [ejs.welcome]
 welcomeHeader = "BIENVENUE SUR AZUR"
 welcomeDescription = ""
-welcomeDescCTA = "Vous  qu'a quelques cliques de Azur."
+welcomeDescCTA = "Vous n'êtes qu'a quelques cliques de Azur."
