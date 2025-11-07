@@ -163,12 +163,12 @@ noAccountSelected = "No Account Selected"
 
 [js.landing.selectedServer]
 noSelection = "No Server Selected"
-loading = "Loading.."
+loading = "Chargement..."
 
 [js.landing.serverStatus]
-server = "SERVEUR"
-offline = "HORS LIGNE"
-players = "JOUEURS"
+server = "SERVER"
+offline = "OFFLINE"
+players = "PLAYERS"
 
 [js.landing.systemScan]
 checking = "Checking system info.."
